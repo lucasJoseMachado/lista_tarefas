@@ -7,9 +7,15 @@ class TaskController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.json { render :show }
+    end
   end
 
   def edit
+    respond_to do |format|
+      format.html { render :edit }
+    end
   end
 
   def create
@@ -51,7 +57,8 @@ class TaskController < ApplicationController
     end
 
     def task_params
-      if params[:task].present? && params[:task].is_a?(String)
+      params[:task] ||= {}
+      if params[:task].is_a?(String)
         task_text = params[:task]
         params[:task] = {
           task: task_text,
