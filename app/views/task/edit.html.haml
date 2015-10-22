@@ -1,0 +1,14 @@
+%h1 Editing task
+
+= form_for @task do |f|
+  .col-xs-12.form-group.field
+    .row= f.label :task
+    .row= f.text_field :task
+  .row
+    .col-xs-12.actions
+      %button.btn.btn-primary.btn-sm{type: 'submit'}
+        %i.fa.fa-save
+        = 'Save'
+      = link_to root_path, class: "btn btn-primary btn-sm" do
+        %i.fa.fa-undo
+        = 'Back'

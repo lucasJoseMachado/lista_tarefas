@@ -1,0 +1,13 @@
+%h1 Tasks
+
+%p.form-group
+  = render partial: 'new'
+.row
+  .col-xs-6
+    %strong
+      = "Undone tasks"
+    = render partial: "list", locals: {tasks: @undone_tasks}
+  .col-xs-6
+    %strong
+      = "Done tasks"
+    = render partial: "list", locals: {tasks: @done_tasks}

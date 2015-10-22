@@ -1,0 +1,7 @@
+= form_for :task do |f|
+  .col-xs-12.form-group.field
+    .row
+      = f.text_field :task
+      %button.btn.btn-primary.btn-sm{type: 'submit'}
+        %i.fa.fa-plus
+        = 'Add'
