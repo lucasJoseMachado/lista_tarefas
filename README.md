@@ -22,6 +22,15 @@ Para as informações de cobertura de código, abra o arquivo lista_tarefas/cove
 Basicamente é necessário adicionar -H "Accept: application/json" ao comando para que o rails identifique a requisição do curl como json e o -H "Content-Type: application/json" precisa estar antes do -X POST.
 
 Portanto, os comandos alterados são:
-  - Criar uma tarefa: curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"task": "Tomar um café", "done": false}' http://localhost:3000/task/
-  - Lista de tarefas: curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:3000/task/
-  - Excluir uma tarefa: curl -H "Accept: application/json" -H "Content-Type: application/json" -X DELETE http://localhost:3000/task/1/
+
+## Criar uma tarefa:
+
+    curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"task": "Tomar um café","done": false}' http://localhost:3000/task/
+
+## Lista de tarefas:
+
+    curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:3000/task/
+
+## Excluir uma tarefa:
+
+    curl -H "Accept: application/json" -H "Content-Type: application/json" -X DELETE http://localhost:3000/task/1/
